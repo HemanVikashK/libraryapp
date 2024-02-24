@@ -29,7 +29,7 @@ const Signup = () => {
       });
       const data = await response.json();
       console.log(data.status);
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error("Error:", error);
     }
@@ -84,8 +84,8 @@ const Signup = () => {
         <br />
         <br />
         <br />
-        <Link to="/login">
-          <button type="button" className="btn btn-primary">
+        <Link to="/">
+          <button type="button" className="btn btn-secondary">
             Login
           </button>
         </Link>

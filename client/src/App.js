@@ -3,20 +3,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Login";
 import Library from "./Library";
 import SignUp from "./SignUp";
-export const AuthContext = createContext();
+import Userlibrary from "./Userlibrary";
+import { AuthProvider } from "./AuthContext";
+import Header from "./Header";
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false);
-
   return (
     <BrowserRouter>
-      <AuthContext.Provider value={{ isAdmin, setIsAdmin }}>
+      <AuthProvider>
+        <Header />
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/Library" element={<Library />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/admin/Library" element={<Library />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/user/library" element={<Userlibrary />} />
         </Routes>
-      </AuthContext.Provider>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

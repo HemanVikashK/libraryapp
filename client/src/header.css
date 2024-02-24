@@ -1,0 +1,71 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+ul li {
+  margin-right: 15px;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 10px;
+}
+ul li {
+  margin-right: 15px;
+}
+
+/* Add this CSS for the Login link */
+ul li a {
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+ul li a:hover {
+  background-color: #555;
+  border-color: #555;
+  text-decoration: none;
+}
+
+ul li a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+button:focus {
+  outline: none;
+}
