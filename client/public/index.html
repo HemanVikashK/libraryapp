@@ -36,6 +36,18 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="google_translate_element"></div>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
