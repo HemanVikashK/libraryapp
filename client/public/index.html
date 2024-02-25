@@ -37,6 +37,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
+    <div id="root"></div>
     <div id="google_translate_element"></div>
     <script>
       function googleTranslateElementInit() {
@@ -47,8 +48,36 @@
       }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+      /* Style for the Google Translate element */
+      #google_translate_element {
+        display: inline-block; /* Display as inline-block to avoid full width */
+        margin-top: 10px; /* Optional: Adjust the top margin as needed */
+        font-size: 14px; /* Optional: Adjust the font size as needed */
+        font-family: Arial, sans-serif; /* Optional: Adjust the font family as needed */
+      }
 
-    <div id="root"></div>
+      /* Style for the dropdown arrow icon */
+      .goog-te-gadget-icon {
+        display: none; /* Hide the default dropdown arrow icon */
+      }
+
+      /* Style for the translation dropdown */
+      .goog-te-combo {
+        border: 1px solid #ccc; /* Add a border around the dropdown */
+        border-radius: 4px; /* Optional: Add border radius for a rounded appearance */
+        padding: 5px; /* Optional: Add padding inside the dropdown */
+        background-color: #fff; /* Optional: Add a background color */
+        color: #333; /* Optional: Set text color */
+        font-size: 14px; /* Optional: Set font size */
+      }
+
+      /* Style for the translated text */
+      .goog-te-banner-frame.skiptranslate {
+        display: none; /* Hide the "Google Translate" banner */
+      }
+    </style>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
