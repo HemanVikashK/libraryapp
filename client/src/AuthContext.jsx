@@ -8,9 +8,12 @@ export const AuthProvider = ({ children }) => {
   const [signedin, setsignedin] = useState(false);
   const login = async (token) => {
     try {
-      const response = await fetch("http://localhost:5000/profile", {
-        headers: { authorization: token },
-      });
+      const response = await fetch(
+        "https://libraryapp-kappa.vercel.app/profile",
+        {
+          headers: { authorization: token },
+        }
+      );
       const data = await response.json();
       setUser(data.user);
       setsignedin(true);

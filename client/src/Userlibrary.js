@@ -6,7 +6,7 @@ const Library = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("https://libraryapp-kappa.vercel.app/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error fetching data:", error));

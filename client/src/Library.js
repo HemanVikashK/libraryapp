@@ -9,7 +9,7 @@ const Library = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("https://libraryapp-kappa.vercel.app/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -24,8 +24,8 @@ const Library = () => {
       .validateFields()
       .then((values) => {
         const url = selectedBook
-          ? `http://localhost:5000/books/${selectedBook.id}` // If editing
-          : "http://localhost:5000/books"; // If adding
+          ? `https://libraryapp-kappa.vercel.app/books/${selectedBook.id}` // If editing
+          : "https://libraryapp-kappa.vercel.app/books"; // If adding
         const method = selectedBook ? "PUT" : "POST";
 
         fetch(url, {
@@ -59,7 +59,7 @@ const Library = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/books/${id}`, {
+    fetch(`https://libraryapp-kappa.vercel.app/books/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
