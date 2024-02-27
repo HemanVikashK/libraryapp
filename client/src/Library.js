@@ -186,6 +186,9 @@ const Library = () => {
             </Form>
           </Modal>
           <Button onClick={handleAddBook}>Add Book</Button>
+          <Button onClick={() => setDarkMode(!darkMode)}>
+            Toggle Dark Mode
+          </Button>
         </div>
       </div>
     </>
