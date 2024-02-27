@@ -1,0 +1,54 @@
+/* Custom styles for dark mode - overall background */
+.dark-mode .bigbox {
+  background-color: #333 !important;
+  color: #fff !important;
+  height: 100vh !important; /* Set height to cover the entire viewport */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+/* Custom styles for dark mode - table */
+.dark-mode .ant-table {
+  background-color: #444;
+}
+
+/* Custom styles for dark mode - table header */
+.dark-mode .ant-table-thead > tr > th {
+  background-color: #555;
+}
+
+/* Custom styles for dark mode - table row */
+.dark-mode .ant-table-tbody > tr > td {
+  background-color: #666;
+}
+
+/* Custom styles for dark mode - table row hover */
+.dark-mode .ant-table-tbody > tr:hover > td {
+  background-color: #777;
+}
+
+/* Custom styles for dark mode - button */
+.dark-mode .ant-btn {
+  background-color: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+/* Custom styles for dark mode - button hover */
+.dark-mode .ant-btn:hover {
+  background-color: #666;
+  border-color: #666;
+  color: #fff;
+}
+
+/* Custom styles for dark mode - table row hover */
+/* Custom styles for dark mode - table row hover */
+.dark-mode .ant-table-tbody > tr:hover > td {
+  background-color: #666 !important;
+  color: #000 !important; /* Set font color to black */
+}

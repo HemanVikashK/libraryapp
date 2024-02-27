@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Table, Modal, Form, Input, Button } from "antd";
-
+import "./library.css";
 const Library = () => {
   const [books, setBooks] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
   const [form] = Form.useForm();
   const [searchText, setSearchText] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     fetch("https://libraryapp-kappa.vercel.app/books")
@@ -123,54 +124,69 @@ const Library = () => {
 
   return (
     <>
-      <div
-        className="box"
-        style={{ top: "10%", margin: "auto", width: "60%", left: "20%" }}
-      >
-        <Input
-          placeholder="Search Books"
-          onChange={(e) => setSearchText(e.target.value)}
-          style={{ marginBottom: "10px" }}
-        />
-        <Table columns={columns} dataSource={filteredBooks} rowKey="id"></Table>
-        <Modal
-          title="Add Book"
-          visible={isModalVisible}
-          onOk={handleOk}
-          onCancel={handleCancel}
+      <div className={`bigbox ${darkMode ? "dark-mode" : ""}`}>
+        <div
+          className={`box ${darkMode ? "dark-mode" : ""}`}
+          style={{
+            top: "10%",
+            margin: "auto",
+            width: "100%",
+            left: "0px",
+            padding: "20px",
+          }}
         >
-          <Form form={form}>
-            <Form.Item
-              label="Title"
-              name="title"
-              rules={[{ required: true, message: "Please enter title" }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Author"
-              name="author"
-              rules={[{ required: true, message: "Please enter author" }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Subject"
-              name="subject"
-              rules={[{ required: true, message: "Please enter subject" }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Publish Date"
-              name="publishdate"
-              rules={[{ required: true, message: "Please enter publish date" }]}
-            >
-              <Input />
-            </Form.Item>
-          </Form>
-        </Modal>
-        <Button onClick={handleAddBook}>Add Book</Button>
+          <Input
+            placeholder="Search Books"
+            onChange={(e) => setSearchText(e.target.value)}
+            style={{ marginBottom: "10px" }}
+          />
+          <Table
+            className={darkMode ? "dark-table" : ""}
+            columns={columns}
+            dataSource={filteredBooks}
+            rowKey="id"
+          ></Table>
+          <Modal
+            title="Add Book"
+            visible={isModalVisible}
+            onOk={handleOk}
+            onCancel={handleCancel}
+          >
+            <Form form={form}>
+              <Form.Item
+                label="Title"
+                name="title"
+                rules={[{ required: true, message: "Please enter title" }]}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                label="Author"
+                name="author"
+                rules={[{ required: true, message: "Please enter author" }]}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                label="Subject"
+                name="subject"
+                rules={[{ required: true, message: "Please enter subject" }]}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                label="Publish Date"
+                name="publishdate"
+                rules={[
+                  { required: true, message: "Please enter publish date" },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Form>
+          </Modal>
+          <Button onClick={handleAddBook}>Add Book</Button>
+        </div>
       </div>
     </>
   );

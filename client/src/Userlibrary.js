@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Table, Input, Button } from "antd";
-
+import "./library.css";
 const Library = () => {
   const [books, setBooks] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     fetch("https://libraryapp-kappa.vercel.app/books")
@@ -35,8 +36,14 @@ const Library = () => {
   return (
     <>
       <div
-        className="box"
-        style={{ top: "10%", margin: "auto", width: "60%", left: "20%" }}
+        className={`box ${darkMode ? "dark-mode" : ""}`}
+        style={{
+          top: "10%",
+
+          width: "100%",
+          left: "0px",
+          padding: "20px",
+        }}
       >
         <Input
           placeholder="Search Books"
@@ -44,6 +51,7 @@ const Library = () => {
           style={{ marginBottom: "10px" }}
         />
         <Table columns={columns} dataSource={filteredBooks} rowKey="id" />
+        <Button onClick={() => setDarkMode(!darkMode)}>Toggle Dark Mode</Button>
       </div>
     </>
   );

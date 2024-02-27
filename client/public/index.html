@@ -51,8 +51,10 @@
     <style>
       /* Style for the Google Translate element */
       #google_translate_element {
-        display: inline-block; /* Display as inline-block to avoid full width */
-        margin-top: 10px; /* Optional: Adjust the top margin as needed */
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        z-index: 9999; /* Ensure it's above other content */
         font-size: 14px; /* Optional: Adjust the font size as needed */
         font-family: Arial, sans-serif; /* Optional: Adjust the font family as needed */
       }
