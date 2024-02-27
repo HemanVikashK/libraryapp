@@ -27,16 +27,13 @@ const Login = () => {
         setsignedin(true);
         return history("/admin/library");
       }
-      const response = await fetch(
-        "https://libraryapp-kappa.vercel.app/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
       const data = await response.json();
       if (data.status === true) {
         login(data.token);
