@@ -7,7 +7,7 @@ const Library = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("http://3.92.26.254:5000/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error fetching data:", error));

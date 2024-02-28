@@ -27,7 +27,7 @@ const Login = () => {
         setsignedin(true);
         return history("/admin/library");
       }
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("http://3.92.26.254:5000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

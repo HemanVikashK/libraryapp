@@ -10,7 +10,7 @@ const Library = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("http://3.92.26.254:5000/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -25,8 +25,8 @@ const Library = () => {
       .validateFields()
       .then((values) => {
         const url = selectedBook
-          ? `http://localhost:5000/books/${selectedBook.id}` // If editing
-          : "http://localhost:5000/books"; // If adding
+          ? `http://3.92.26.254:5000/books/${selectedBook.id}` // If editing
+          : "http://3.92.26.254:5000/books"; // If adding
         const method = selectedBook ? "PUT" : "POST";
 
         fetch(url, {
@@ -60,7 +60,7 @@ const Library = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/books/${id}`, {
+    fetch(`http://3.92.26.254:5000/books/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
